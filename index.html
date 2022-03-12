@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <title>Button Custom with Tailwind</title>
+</head>
+<!-- Created By Ivan Maulana -->
+
+<body class="bg-gray-200">
+    <hr class="border-2 w-full border-purple-500">
+    <div class="p-4 w-full bg-gray-100">
+        <div class="grid grid-cols-6 gap-2">
+            <div class="col-span-12 sm:col-span-6 md:col-span-3">
+                <div class="flex flex-row relative justify-center ">
+                    <button onclick="copy_code(codemodel.innerHTML)"
+                        class="p-2 bg-black text-white focus:outline-none hover:bg-gray-300">Copy
+                        Classes</button>
+                </div>
+            </div>
+            <div class="col-span-12 sm:col-span-6 md:col-span-3">
+                <div class="flex flex-row  relative justify-center">
+                    <button onclick="copy_code(`<button class='${codemodel.innerHTML}'>${model.innerHTML}</button>`)"
+                        class="p-2 bg-black text-white focus:outline-none hover:bg-gray-300">Copy Full Code</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <pre class="flex justify-center mt-1"><code id="codemodel" class="text-sm"></code></pre>
+    <div class="h-200 w-full p-11 flex justify-center bg-gray-200">
+        <button id="model" class="p-2 bg-gray-500 text-white">Button Text</button>
+    </div>
+
+    <!-- Feature -->
+    <div class="flex  text-gray-800">
+        <div class="p-4 w-full">
+            <div class="grid  grid-cols-12 gap-4">
+                <!-- Start Feature -->
+                <div class="col-span-12 sm:col-span-6 md:col-span-3">
+                    <div class="flex flex-row bg-white shadow-sm rounded p-1 relative">
+                        <input id="buttontext"
+                            class="block appearance-none w-full  text-gray-700 py-3 px-1 leading-tight focus:outline-none "
+                            value="Button Text" onchange="setButtonText();">
+                    </div>
+                </div>
+                <div class="col-span-12 sm:col-span-6 md:col-span-3">
+                    <div class="flex flex-row bg-white shadow-sm rounded p-4 relative">
+                        <select
+                            class="block appearance-none w-full text-gray-700  px-5 pr-8 rounded leading-tight focus:outline-none "
+                            onchange="resetClass('bg-black','bg-white','bg-gray-500','bg-red-500','bg-yellow-400','bg-green-500','bg-blue-500','bg-indigo-500','bg-purple-500','bg-pink-500');addClass(value);">
+                            <option value="bg-transparent">Background None</option>
+                            <option value="bg-white">Background White</option>
+                            <option value="bg-black" selected>Background Black</option>
+                            <option value="bg-gray-500" selected>Background Gray</option>
+                            <option value="bg-red-500">Background Red</option>
+                            <option value="bg-yellow-400">Background Yellow</option>
+                            <option value="bg-green-500">Background Green</option>
+                            <option value="bg-blue-500">Background Blue</option>
+                            <option value="bg-indigo-500">Background Indigo</option>
+                            <option value="bg-purple-500">Background purple</option>
+                            <option value="bg-pink-500">Background Pink</option>
+
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-span-12 sm:col-span-6 md:col-span-3">
+                    <div class="flex flex-row bg-white shadow-sm rounded p-4 relative">
+                        <select
+                            class="block appearance-none w-full text-gray-700  px-5 pr-8 rounded leading-tight focus:outline-none "
+                            onchange="resetClass('hover:bg-black','hover:bg-white','hover:bg-gray-500','hover:bg-red-500','hover:bg-yellow-400','hover:bg-green-500','hover:bg-blue-500','hover:bg-indigo-500','hover:bg-purple-500','hover:bg-pink-500');addClass(value);">
+                            <option value="" selected>Hover Bg None</option>
+                            <option value="hover:bg-white">Hover Bg White</option>
+                            <option value="hover:bg-black">Hover Bg Black</option>
+                            <option value="hover:bg-gray-500">Hover Bg Gray</option>
+                            <option value="hover:bg-red-500">Hover Bg Red</option>
+                            <option value="hover:bg-yellow-400">Hover Bg Yellow</option>
+                            <option value="hover:bg-green-500">Hover Bg Green</option>
+                            <option value="hover:bg-blue-500">Hover Bg Blue</option>
+                            <option value="hover:bg-indigo-500">Hover Bg Indigo</option>
+                            <option value="hover:bg-purple-500">Hover Bg purple</option>
+                            <option value="hover:bg-pink-500">Hover Bg Pink</option>
+
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-span-12 sm:col-span-6 md:col-span-3">
+                    <div class="flex flex-row bg-white shadow-sm rounded p-4 relative">
+                        <select
+                            class="block appearance-none  text-gray-700 px-4 pr-8 rounded leading-tight focus:outline-none "
+                            onchange="resetClass('rounded-sm', 'rounded', 'rounded-lg', 'rounded-full');addClass(value);">
+                            <option value="" selected>Rounded None</option>
+                            <option value="rounded-sm">Rounded sm</option>
+                            <option value="rounded">Rounded</option>
+                            <option value="rounded-lg">Rounded lg</option>
+                            <option value="rounded-full">Rounded full</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-12 sm:col-span-6 md:col-span-3">
+                    <div class="flex flex-row bg-white shadow-sm rounded p-4 relative">
+                        <select
+                            class="block appearance-none w-full text-gray-700  px-5 pr-8 rounded leading-tight focus:outline-none "
+                            onchange="resetClass('text-pink-500','text-purple-500','text-indigo-500','text-blue-500','text-green-500','text-yellow-400','text-red-500','text-white','text-black','text-gray-500');addClass(value);">
+                            <option value="text-white">Text White</option>
+                            <option value="text-black">Text Black</option>
+                            <option value="text-gray-500">Text Gray</option>
+                            <option value="text-red-500">Text Red</option>
+                            <option value="text-yellow-400">Text Yellow</option>
+                            <option value="text-green-500">Text Green</option>
+                            <option value="text-blue-500">Text Blue</option>
+                            <option value="text-indigo-500">Text Indigo</option>
+                            <option value="text-purple-500">Text purple</option>
+                            <option value="text-pink-500">Text Pink</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 sm:col-span-6 md:col-span-3">
+                    <div class="flex flex-row bg-white shadow-sm rounded p-4 relative">
+                        <select
+                            class="block appearance-none w-full text-gray-700  px-5 pr-8 rounded leading-tight focus:outline-none "
+                            onchange="resetClass('hover:text-pink-500','hover:text-purple-500','hover:text-indigo-500','hover:text-blue-500','hover:text-green-500','hover:text-yellow-400','hover:text-red-500','hover:text-white','hover:text-black','hover:text-gray-500');addClass(value);">
+                            <option value="">Hover Text None</option>
+                            <option value="hover:text-white">Hover Text White</option>
+                            <option value="hover:text-black">Hover Text Black</option>
+                            <option value="hover:text-gray-500">Hover Text Gray</option>
+                            <option value="hover:text-red-500">Hover Text Red</option>
+                            <option value="hover:text-yellow-400">Hover Text Yellow</option>
+                            <option value="hover:text-green-500">Hover Text Green</option>
+                            <option value="hover:text-blue-500">Hover Text Blue</option>
+                            <option value="hover:text-indigo-500">Hover Text Indigo</option>
+                            <option value="hover:text-purple-500">Hover Text purple</option>
+                            <option value="hover:text-pink-500">Hover Text Pink</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-span-12 sm:col-span-6 md:col-span-3">
+                    <div class="flex flex-row bg-white shadow-sm rounded p-4 relative">
+                        <select
+                            class="block appearance-none  text-gray-700 px-4 pr-8 rounded leading-tight focus:outline-none "
+                            onchange="resetClass('outline-black','outline-white','outline-none');addClass(value);">
+                            <option value="outline-none">Outline None</option>
+                            <option value="outline-white">Outline White</option>
+                            <option value="outline-black">Outline Black</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 sm:col-span-6 md:col-span-3">
+                    <div class="flex flex-row bg-white shadow-sm rounded p-4 relative">
+                        <select
+                            class="block appearance-none  text-gray-700 px-4 pr-8 rounded leading-tight focus:outline-none "
+                            onchange="resetClass('focus:outline-black','focus:outline-white','focus:outline-none');addClass(value);">
+                            <option value="">Focus None</option>
+                            <option value="focus:outline-none">Focus Outline None</option>
+                            <option value="focus:outline-white">Focus Outline White</option>
+                            <option value="focus:outline-black">Focus Outline Black</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- End Feature -->
+            </div>
+        </div>
+    </div>
+    <footer class="flex justify-center mt-10">
+        <div class="text-xs">Created by Ivan Maulana.</div>
+    </footer>
+</body>
+<!-- logical code -->
+
+<script>
+    let btn = document.getElementById('model');
+    let cod = document.getElementById('codemodel');
+
+    function Classes() {
+        let cde = btn.classList.value;
+        cod.innerHTML = cde
+    }
+    function addClass(className) {
+        btn.classList.add(className);
+        Classes();
+    }
+    function addcs(className) {
+        btn.classList.add(className);
+    }
+    function removeClass(className) {
+        btn.classList.remove(className);
+        Classes();
+    }
+    function resetClass() {
+        for (var i = 0; i < arguments.length; i++) {
+            removeClass(arguments[i]);
+        }
+    }
+    function setButtonText() {
+        let newText = document.getElementById('buttontext').value;
+        btn.innerHTML = newText;
+    }
+    function copy_code(value) {
+        var tempInput = document.createElement("input");
+        tempInput.value = value;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        alert('Copied successfully')
+    }
+    window.onload = Classes();
+</script>
+
+</html>
